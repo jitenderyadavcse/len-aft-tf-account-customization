@@ -1,0 +1,7 @@
+[
+    "glue:CreateMLTransform",
+    "glue:CreateConnection",
+    "glue:CreatePartition",
+    "glue:CreateRegistry",
+    "glue:CreateSchema"
+]

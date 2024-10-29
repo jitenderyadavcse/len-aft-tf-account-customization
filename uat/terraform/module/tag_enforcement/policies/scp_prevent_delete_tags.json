@@ -1,0 +1,40 @@
+{
+  "NOT_USED" : "THIS POLICY IS APPLIED AT WORKLOAD OU LEVEL. REDUNDANT ON ACCOUNT LEVEL",  
+  "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Sid": "DenyTagDelete",
+        "Effect": "Deny",
+        "Action": [
+            "ec2:DeleteTags",
+            "s3:DeleteJobTagging",
+            "s3:DeleteObjectTagging",
+            "s3:DeleteObjectVersionTagging",
+            "s3:DeleteStorageLensConfigurationTagging",
+            "lambda:UntagResource",
+            "backup:UntagResource",
+            "dynamodb:UntagResource",
+            "elasticfilesystem:DeleteTags",
+            "elasticfilesystem:UntagResource",
+            "eks:UntagResource",
+            "elasticloadbalancing:RemoveTags",
+            "network-firewall:UntagResource",
+            "rds:RemoveTagsFromResource",
+            "rds:RemoveTagsFromResource",
+            "sns:UntagResource",
+            "sqs:UntagQueue",
+            "secretsmanager:UntagResource",
+            "waf:UntagResource",
+            "aps:UntagResource",
+            "scn:UntagResource",
+            "access-analyzer:UntagResource",
+            "glue:UntagResource",
+			      "cloudformation:UntagResource"
+        ],
+        
+        "Resource": [
+          "*"
+        ]
+		  }
+    ]
+  }
