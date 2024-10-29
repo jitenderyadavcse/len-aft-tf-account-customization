@@ -1,0 +1,8 @@
+[
+    "glue:CreateTable",
+    "glue:CreateWorkflow",
+    "sqs:CreateQueue",
+    "ec2:CreateInstance",
+    "ec2:CreateSubnet",
+    "ec2:CreateVpc"
+]
