@@ -1,0 +1,9 @@
+[
+    "lambda:CreateFunction",
+    "glue:CreateCrawler",
+    "glue:CreateDatabase",
+    "glue:CreateJob",
+    "codepipeline:CreatePipeline",
+    "codestar:CreateProject",
+    "s3:CreateBucket"
+]
