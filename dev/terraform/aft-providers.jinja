@@ -1,0 +1,60 @@
+## Auto generated providers.tf ##
+## Updated on: {{ timestamp }} ##
+
+data "aws_partition" "current" {}
+
+## data "aws_ssm_parameter" "ct_management_id" {
+##  name = "/aft/account/ct-management/account-id"
+## }
+
+provider "aws" {
+  alias = "ct_management"
+  region = var.ct_home_region
+  assume_role {
+    role_arn     = "arn:${data.aws_partition.current.partition}:iam::${var.ct_management_account_id}:role/AWSAFTExecution"
+  }
+  default_tags {
+    tags = {
+      managed_by                  = "AFT"
+    }
+  }
+}
+
+provider "aws" {
+  alias = "aft_management"
+  region = var.ct_home_region
+  assume_role {
+    role_arn     = "arn:${data.aws_partition.current.partition}:iam::${var.aft_management_account_id}:role/AWSAFTExecution"
+  }
+  default_tags {
+    tags = {
+      managed_by                  = "AFT"
+    }
+  }
+}
+
+provider "aws" {
+  alias = "vended_account"
+  region = "{{ provider_region }}"
+  assume_role {
+    role_arn    = "{{ target_admin_role_arn }}"
+  }
+  default_tags {
+    tags = {
+      managed_by                  = "AFT"
+    }
+  }
+}
+
+provider "aws" {
+  alias = "network_management"
+  region = var.ct_home_region
+  assume_role {
+    role_arn     = "arn:${data.aws_partition.current.partition}:iam::${var.network_management_account_id}:role/AWSAFTExecution"
+  }
+  default_tags {
+    tags = {
+      managed_by                  = "AFT"
+    }
+  }
+}

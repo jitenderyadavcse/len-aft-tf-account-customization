@@ -1,0 +1,15 @@
+{
+    "actions": [
+        "ec2:CreateVpc",
+        "ec2:RunInstances",
+        "lambda:CreateFunction",
+        "sqs:CreateQueue"
+    ],
+    "resources": [
+        "arn:aws:ec2:*:*:instance/*",
+        "arn:aws:ec2:*:*:volume/*",
+        "arn:aws:ec2:*:*:vpc/*",
+        "arn:aws:lambda:*:*:function:*:*",
+        "arn:aws:sqs:*:*:*"
+    ]
+}
